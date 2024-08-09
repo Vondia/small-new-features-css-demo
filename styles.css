@@ -1,0 +1,95 @@
+/* Calc-size demo */
+.card {
+    margin-top: 1rem;
+    border: 1px solid black;
+    padding: 1rem;
+    width: 90px;
+}
+
+.title {
+    font-size: 1.5rem;
+}
+
+.body {
+    height: 0;
+    transition: height 0.5s;
+    overflow: hidden;
+}
+
+.body.show {
+    height: 40px;
+
+    /* height: auto;
+    height: calc-size(auto); */
+}
+
+
+
+/* starting style */
+/* How we do it now */
+/* .box {
+    background-color: red;
+    height: 100px;
+    width: 100px;
+   animation: grow 1s forwards;
+}
+
+@keyframes grow {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(0.5);
+    }
+} */
+
+/* With starting style: */
+/* .box {
+    background-color: red;
+    height: 100px;
+    width: 100px;
+   scale: 0.5;
+   transition: scale 1s;
+
+   @starting-style {
+       scale: 0;
+   }
+} */
+
+/* Pt 3: transition behaviour */
+/* .box {
+    display: none;
+    background-color: red;
+    height: 100px;
+    width: 100px;
+    transition: translate 1s;
+   translate: 40px;
+}
+
+.box.show {
+    display: block;
+    translate: 0;
+} */
+/* Problem is whenever you press the button display none gets applied before the transform is applied. */
+
+/* .box {
+    display: none;
+    background-color: red;
+    height: 100px;
+    width: 100px;
+    transition: translate 1s;
+
+    transition-behavior lets you animate stuff we couldnt before! Like display (hello easy fade-in and fade-outs!)
+    transition: display 1s, translate 1s;
+    transition-behavior: allow-discrete;
+    translate: -20px;
+}
+
+.box.show {
+    display: block;
+    translate: 0;
+
+    @starting-style {
+        translate: 20px;
+    }
+} */
